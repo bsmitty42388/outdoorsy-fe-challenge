@@ -1,9 +1,13 @@
 :root {
     --rounded-corners: 10px;
     --primary-color: #cacaca;
+    --primary-font-color: #5f5d5d;
+    --primary-font-weight: 500;
 }
 
 main {
     padding: 1rem;
     font-size: 16px;
+    color: var(--primary-font-color);
+    font-weight: var(--primary-font-weight);
 }

@@ -10,7 +10,7 @@ interface ListingItemProps {
 
 const ListingItem: React.FC<ListingItemProps> = ({data}: ListingItemProps) => {
     return (
-        <div data-testid="listingItem" className={styles.ListingItem}>
+        <div data-testid="listingItem" className={styles.listingItem}>
             <ListingImage source={data.imageUrl} alt="fill" />
             <ListingDetail title={data.title} />
         </div>
