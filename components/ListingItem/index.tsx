@@ -1,14 +1,18 @@
 import { ReactNode } from "react"
 import styles from './ListingItem.module.css'
+import ListingImage from "./ListingImage"
+import { Rental } from "@/types/SearchListing.interfaces"
+import ListingDetail from "./ListingDetail"
 
 interface ListingItemProps {
-    children?: ReactNode
+    data: Rental
 }
 
-const ListingItem: React.FC<ListingItemProps> = ({children, ...props}: ListingItemProps) => {
+const ListingItem: React.FC<ListingItemProps> = ({data}: ListingItemProps) => {
     return (
-        <div data-testid="listingItem" className={styles.ListingItem} {...props}>
-            {children}
+        <div data-testid="listingItem" className={styles.ListingItem}>
+            <ListingImage source={data.imageUrl} alt="fill" />
+            <ListingDetail title={data.title} />
         </div>
     )
 }
