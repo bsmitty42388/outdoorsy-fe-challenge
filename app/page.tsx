@@ -2,6 +2,7 @@ import styles from './page.module.css'
 import ListingImage from '../components/ListingItem/ListingImage';
 import ListingItem from '@/components/ListingItem';
 import ListingDetail from '@/components/ListingItem/ListingDetail';
+import SearchListing from '@/views/SearchListing';
 
 const testData = [
   {"id": 1, "src": "https://res.cloudinary.com/outdoorsy/image/upload/v1686197514/p/rentals/365844/images/hhfhiwqiw0lpyl6rvo97.jpg", "alt": "Test img 1", "title": "Test Image 1"},
@@ -14,14 +15,7 @@ export default function Home(): JSX.Element {
   return (
     <main className={styles.main}>
       <div className={styles.description}>
-          {testData.map((listing) => {
-            return (
-              <ListingItem key={listing.id}>
-                <ListingImage source={listing.src} alt={listing.alt} />
-                <ListingDetail title={listing.title} />
-              </ListingItem>
-            )
-          })}
+          <SearchListing />
       </div>
     </main>
   )
