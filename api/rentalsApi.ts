@@ -1,14 +1,10 @@
 import axios from "axios";
+import { Rental } from "@/types/SearchListing.interfaces";
 
 const rentalsInstance = axios.create({
     baseURL: `https://search.outdoorsy.com/rentals?`,
     timeout: 5000,
 });
-
-interface Rental {
-    title: string,
-    imageUrl: string
-};
 
 /**
  * Acts as a "DTO" of sorts, response object to be parsed for specific FE needs
@@ -26,6 +22,7 @@ interface RentalResponse {
 const parseResponseToRental = (data: RentalResponse[]): Rental[] => {
     return data.map((rental: RentalResponse) => {
         return {
+            id: rental.id,
             title: rental.attributes.name,
             imageUrl: rental.attributes.primary_image_url
         }
