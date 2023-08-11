@@ -5,6 +5,7 @@ import { useCallback, useEffect, useState } from "react";
 import { useDebounce } from "usehooks-ts";
 import { Rental } from "@/types/SearchListing.interfaces";
 import ListingItem from "@/components/ListingItem";
+import styles from "./SearchListing.module.css"
 
 const SearchListing = (): JSX.Element => {
 
@@ -45,7 +46,7 @@ const SearchListing = (): JSX.Element => {
 
     return (
         <div className="test">
-            <input placeholder={"Search Rentals..."} onChange={onSearchChange} />
+            <input placeholder={"Search Rentals..."} onChange={onSearchChange} className={styles.searchInput} />
             {getSearchedDisplay()}
         </div>
     )

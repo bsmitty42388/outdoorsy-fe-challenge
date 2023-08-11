@@ -1,0 +1,9 @@
+:root {
+    --rounded-corners: 10px;
+    --primary-color: #cacaca;
+}
+
+main {
+    padding: 1rem;
+    font-size: 16px;
+}
